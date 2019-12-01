@@ -6,10 +6,12 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 
@@ -36,6 +38,8 @@ public class DetailCategoryFragment extends Fragment {
         super.onViewCreated(view, saveInstanceState);
         TextView tvCatagoryName = view.findViewById(R.id.tv_category_name);
         TextView tvCategoryDescription = view.findViewById(R.id.tv_category_description);
+        Button btnHome = view.findViewById(R.id.btn_home);
+        btnHome.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_detailCategoryFragment_to_homeFragment, null));
 
 //        String dataName = getArguments().getString(CategoryFragment.EXTRA_NAME);
 //        long dataDescription = getArguments().getLong(CategoryFragment.EXTRA_STOCK);
